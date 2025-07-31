@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 当 item 被选中时 (state_checked="true")，应用的颜色 -->
+    <!-- 假设你的主题色是 @color/your_selected_color -->
+    <item android:state_checked="true" android:color="@android:color/holo_red_dark" />
+
+    <!-- 默认状态（未选中）时应用的颜色 -->
+    <!-- 假设你的未选中颜色是 @color/your_unselected_color -->
+    <item android:state_checked="false" android:color="@android:color/holo_blue_bright" />
+
+</selector>

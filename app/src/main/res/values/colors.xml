@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="background">#FFF1F2F5</color>
+    <color name="primary">#FF007AFF</color>
+    <color name="primary_darker">#FF1A3172</color>
+    <color name="primary_lighter">#FF1A3172</color>
+    <color name="secondary">#FF1A3172</color>
+    <color name="tertiary">#FF12C8BF</color>
+    <color name="primary_darker2">#FF0D2746</color>
+    <color name="tertiary_darker">#FF688ABA</color>
+    <color name="tertiary_lighter">#FFACC2DB</color>
+    <color name="on_primary">#FFFFFFFF</color>
+    <color name="primary_grey">#FFE6E6E6</color>
+    <color name="primary_icon">#FFACC2DB</color>
+
+    <!-- Functional Colors -->
+    <color name="error">#FFB00020</color>
+    <color name="primary_red">#FFEF4971</color>
+    <color name="primary_green">#FF5DD3B8</color>
+    <color name="light_green">#FF5AD1A1</color>
+    <color name="shine_green">#FF00796B</color> <!-- Approximated from Colors.tealAccent.shade700 -->
+    <color name="in_color">#FF0ADE91</color>
+    <color name="out_color">#FFFA6966</color>
+
+    <!-- Purple & Blue Shades -->
+    <color name="light_purple">#FF6B22BA</color>
+    <color name="primary_purple">#FF8E5AA4</color>
+    <color name="primary_dark_purple">#FF475AA6</color>
+    <color name="light_primary_purple">#33475AA6</color>
+    <color name="dark_purple">#FF997CCF</color>
+    <color name="dark_blue">#FF1D3246</color>
+    <color name="opacity_dark_blue">#F71D3246</color>
+    <color name="light_blue">#FF688ABA</color>
+
+    <!-- Containers -->
+    <color name="primary_background">#FF082453</color>
+    <color name="primary_container">#FF000C1C</color>
+    <color name="on_primary_container">#FF000C1C</color>
+    <color name="secondary_container">#FFF1F2F5</color>
+    <color name="on_secondary_container">#FF2C2C36</color>
+    <color name="tertiary_container">#FFFFFEFF</color>
+    <color name="on_tertiary_container">#FF2C2C36</color>
+
+    <!-- Text & Labels -->
+    <color name="title">#FFFFFFFF</color>
+    <color name="subtitle">#FF777777</color>
+    <color name="text">#FFBFBFBF</color>
+    <color name="secondary_text">#FF3D3F50</color>
+    <color name="caption">#FFA0A0A0</color>
+    <color name="label">#FF688ABA</color>
+    <color name="label_accent">#FF92A2C3</color>
+    <color name="hint">#FF92A2C3</color>
+    <color name="link">#FF92A2C3</color>
+
+    <!-- UI Components -->
+    <color name="disable">#FFC6C6C6</color>
+    <color name="divider">#FFDBDBDB</color>
+    <color name="primary_fill">#FFF7F6F2</color>
+    <color name="primary_form_fill">#FFF6FAFE</color>
+    <color name="underline">#FFD2DCFF</color>
+    <color name="button">#FF555554</color>
+    <color name="tag">#FF555554</color>
+    <color name="overline">#FF555554</color>
+    <color name="primary_button">#FF12C8BF</color>
+    <color name="on_primary_button">#FFFFFFFF</color>
+    <color name="secondary_button">#FF3765FF</color>
+    <color name="on_secondary_button">#FFFFFFFF</color>
+
+
+    <!-- Greyscale Palette -->
+
+    <color name="dark_grey">#FF3D3F50</color>
+    <color name="nf_grey">#FF688ABA</color>
+    <color name="grey_900">#FF212121</color>
+    <color name="grey_800">#FF424242</color>
+    <color name="grey_700">#FF616161</color>
+    <color name="grey_600">#FF757575</color>
+    <color name="grey_500">#FF9E9E9E</color>
+    <color name="grey_400">#FFBDBDBD</color>
+    <color name="grey_300">#FFE0E0E0</color>
+    <color name="grey_200">#FFEEEEEE</color>
+    <color name="grey_100">#FFF5F5F5</color>
+
+    <!-- Shimmer & Effects -->
+    <color name="transparent">#00000000</color>
+    <color name="light_shimmer">#FFEEEEEE</color>
+    <color name="dark_shimmer">#FFE0E0E0</color>
+</resources>

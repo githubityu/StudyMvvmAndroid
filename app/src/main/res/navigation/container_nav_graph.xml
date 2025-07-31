@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_nav_graph"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.ityu.studymvvmandroid.ui.HomeFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_home">
+    </fragment>
+
+    <fragment
+        android:id="@+id/RecommendFragment"
+        android:name="com.ityu.studymvvmandroid.ui.RecommendFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_home">
+        <!-- 从 Recommend 到其他三个 Tab 的 Action -->
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/HotListFragment"
+        android:name="com.ityu.studymvvmandroid.ui.HotListFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_home">
+        <!-- 从 HotList 到其他三个 Tab 的 Action -->
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ProfileFragment"
+        android:name="com.ityu.studymvvmandroid.ui.ProfileFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_home">
+        <!-- 从 Profile 到其他三个 Tab 的 Action -->
+
+    </fragment>
+
+</navigation>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!-- 这个是嵌套的 NavHost，它使用自己的导航图 -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nested_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/container_bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="?android:colorBackground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:defaultNavHost="false"
+        app:navGraph="@navigation/container_nav_graph" /> <!-- 指向二级页面的导航图 -->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/container_bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/bottom_nav_color_selector"
+        app:itemTextColor="@color/bottom_nav_color_selector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/container_bottom_nav_menu" /> <!-- 指向二级页面的菜单 -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,67 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainFragment">
+
+    <fragment
+        android:id="@+id/UserListFragment"
+        android:name="com.ityu.studymvvmandroid.ui.UserListFragment"
+        android:label="Users"
+
+        tools:layout="@layout/fragment_user_list">
+        <!-- Add any navigation actions here -->
+        <action
+            android:id="@+id/action_UserListFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.ityu.studymvvmandroid.ui.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_user_list">
+        <action
+            android:id="@+id/action_MainFragment_to_TabFragment"
+            app:destination="@id/TabFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.ityu.studymvvmandroid.ui.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+        <argument
+            android:name="myArg"
+            android:defaultValue="Default Value"
+            app:argType="string" /> <!-- 添加参数 -->
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.ityu.studymvvmandroid.ui.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_UserListFragment"
+            app:destination="@id/UserListFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_TabFragment"
+            app:destination="@id/TabFragment" />
+        <argument
+            android:name="myArg"
+            android:defaultValue="Default Value"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/TabFragment"
+        android:name="com.ityu.studymvvmandroid.ui.TabFragment"
+        android:label="fragment_tab"
+        tools:layout="@layout/fragment_tab">
+
+    </fragment>
+</navigation>
