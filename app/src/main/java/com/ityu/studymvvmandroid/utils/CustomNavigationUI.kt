@@ -10,6 +10,44 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavOptions
 import java.lang.ref.WeakReference
 
+fun NavController.navigateWithShowHide(
+    @IdRes destinationId: Int,
+    vararg args: Pair<String, Any?>, // 【亮点 3】
+) {
+    LogUtils.i("NavigateUtils", "navigateWithShowHide: $destinationId")
+    val finalNavOptions = NavOptions.Builder()
+        .setPopUpTo(this.graph.startDestinationId, inclusive = false, saveState = true)
+        .setRestoreState(true)
+        .setLaunchSingleTop(true)
+        .build()
+
+    // 2. 创建 Bundle (逻辑保持不变)
+    val bundle = Bundle().apply {
+        args.forEach { (key, value) ->
+            when (value) {
+                null -> { /* ignore */
+                }
+
+                is String -> putString(key, value)
+                is Int -> putInt(key, value)
+                is Boolean -> putBoolean(key, value)
+                is Float -> putFloat(key, value)
+                is Long -> putLong(key, value)
+                // ... (其他类型) ...
+                else -> throw IllegalArgumentException("Unsupported argument type for key '$key': ${value.javaClass.name}")
+            }
+        }
+    }
+
+    // 3. 执行导航
+    try {
+        this.navigate(destinationId, bundle.takeIf { !it.isEmpty }, finalNavOptions)
+    } catch (e: IllegalArgumentException) {
+        e.printStackTrace()
+    }
+}
+
+
 /**
  * 我们自定义的 NavigationUI 辅助对象。
  */
@@ -86,3 +124,4 @@ object CustomNavigationUI {
         }
     }
 }
+

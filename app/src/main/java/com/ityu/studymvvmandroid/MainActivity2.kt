@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.button.MaterialButton
 import com.ityu.studymvvmandroid.databinding.ActivityMain2Binding
 import com.ityu.studymvvmandroid.di.AppStatusManager
@@ -94,7 +95,9 @@ class MainActivity2 : AppCompatActivity(), ToolbarController {
     }
 
     private fun setupNavigation() {
-        navController = findNavController(R.id.nav_host_fragment_content_main)
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
+        navController = navHostFragment.navController
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.MainFragment) {
                 // 应用主页样式

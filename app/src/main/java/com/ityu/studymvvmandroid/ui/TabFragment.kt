@@ -60,6 +60,9 @@ class TabFragment : BaseFragment<FragmentTabBinding>(FragmentTabBinding::inflate
         binding.btnNav4.setOnClickListener {
             navigateTo(R.id.ProfileFragment)
         }
+        binding.btnNav5.setOnClickListener {
+            navigateTo(R.id.HomeFragment)
+        }
     }
     /**
      * 【核心】自定义的导航方法，它会配置 NavOptions 来实现 show/hide 行为。
