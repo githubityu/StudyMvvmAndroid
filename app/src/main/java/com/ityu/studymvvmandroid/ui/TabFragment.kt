@@ -13,6 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.ityu.studymvvmandroid.R
 import com.ityu.studymvvmandroid.base.BaseFragment
 import com.ityu.studymvvmandroid.databinding.FragmentTabBinding
+import com.ityu.studymvvmandroid.utils.navigateWithShowHide
 
 
 class TabFragment : BaseFragment<FragmentTabBinding>(FragmentTabBinding::inflate) {
@@ -69,22 +70,8 @@ class TabFragment : BaseFragment<FragmentTabBinding>(FragmentTabBinding::inflate
      * @param destinationId 要导航到的 Fragment 在导航图中的 ID。
      */
     private fun navigateTo(@IdRes destId: Int) {
-        val builder = NavOptions.Builder()
-            .setLaunchSingleTop(true)
-            .setRestoreState(true) // 恢复状态
-            .setPopUpTo(
-                nestedNavController.graph.startDestinationId,
-                inclusive = false,
-                saveState = true // 保存状态
-            )
-        val options = builder.build()
-        try {
-            // 执行导航
-            nestedNavController.navigate(destId, null, options)
-        } catch (e: IllegalArgumentException) {
-            // 捕获当目标 destination 找不到时的异常
-            e.printStackTrace()
-        }
+        nestedNavController.navigateWithShowHide(destId)
+
     }
 
 }
