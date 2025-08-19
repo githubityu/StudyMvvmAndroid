@@ -2,8 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <!-- 这个是嵌套的 NavHost，它使用自己的导航图 -->
     <androidx.fragment.app.FragmentContainerView
@@ -11,23 +10,72 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/container_bottom_nav"
+        android:background="?android:colorBackground"
+        app:defaultNavHost="false"
+        app:layout_constraintBottom_toTopOf="@+id/container_tab"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="?android:colorBackground"
         app:layout_constraintTop_toTopOf="parent"
-        app:defaultNavHost="false"
         app:navGraph="@navigation/container_nav_graph" /> <!-- 指向二级页面的导航图 -->
+
+
+    <LinearLayout
+        android:id="@+id/container_tab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/container_bottom_nav">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/btn_nav_1"
+            android:gravity="center"
+            android:text="首页" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/btn_nav_2"
+            android:text="推荐" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/btn_nav_3"
+            android:gravity="center"
+            android:text="关注" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/btn_nav_4"
+            android:gravity="center"
+            android:text="我的" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/btn_nav_5"
+            android:gravity="center"
+            android:text="首页" />
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/container_bottom_nav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:labelVisibilityMode="labeled"
         app:itemIconTint="@color/bottom_nav_color_selector"
         app:itemTextColor="@color/bottom_nav_color_selector"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/container_bottom_nav_menu" /> <!-- 指向二级页面的菜单 -->
 

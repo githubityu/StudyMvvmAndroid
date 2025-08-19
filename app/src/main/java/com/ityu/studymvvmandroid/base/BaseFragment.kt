@@ -27,6 +27,11 @@ abstract class BaseFragment<VB : ViewBinding>(private val bindingInflater: (Layo
     }
 
 
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
+        LogUtils.d(javaClass.simpleName, "onHiddenChanged=>$hidden")
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null // Important to prevent memory leaks

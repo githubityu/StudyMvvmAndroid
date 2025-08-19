@@ -7,11 +7,11 @@ import android.view.View
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ityu.studymvvmandroid.R
 
-import com.ityu.studymvvmandroid.base.KeepStateBaseFragmentV2
+import com.ityu.studymvvmandroid.base.KeepStateBaseFragment
 import com.ityu.studymvvmandroid.databinding.FragmentTabBinding
+import com.ityu.studymvvmandroid.utils.LogUtils
 import com.ityu.studymvvmandroid.utils.ToolbarController
 
 // 关键：修改继承的基类
@@ -20,10 +20,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-// 1. 修改继承的基类为 KeepStateBaseFragment
-class MainFragment : KeepStateBaseFragmentV2<FragmentTabBinding>(FragmentTabBinding::inflate) {
 
-
+class MainFragment : KeepStateBaseFragment<FragmentTabBinding>(FragmentTabBinding::inflate) {
     /**
      * 这是 KeepStateBaseFragment 提供的核心方法。
      * 所有只需要执行一次的初始化代码都应该放在这里。
@@ -41,8 +39,13 @@ class MainFragment : KeepStateBaseFragmentV2<FragmentTabBinding>(FragmentTabBind
 
         withBinding {
             it.containerBottomNav.setupWithNavController(nestedNavController)
-
         }
+    }
+
+
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
+        LogUtils.i("MainFragment", "onHiddenChanged: $hidden")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -24,12 +24,21 @@ glide = "4.16.0"
 datastore = "1.1.7"
 core-splashscreen = "1.0.1"
 multidex = "2.0.1"
+legacySupportV4 = "1.0.0"
+jsonwebtoken = "0.12.3"
+googleTruth = "1.4.4"
+kotlinxCoroutinesTest = "1.10.1"
+pahoMqtt = "1.1.1"
+recyclerview = "1.4.0"
+geckoview = "141.0.20250806102122"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "core-splashscreen" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
+google-truth = { group = "com.google.truth", name = "truth", version.ref = "googleTruth" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
@@ -74,9 +83,22 @@ glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", versi
 
 androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
 
+# jjwt 核心库
+jjwt-api = { group = "io.jsonwebtoken", name = "jjwt-api", version.ref = "jsonwebtoken" }
+jjwt-impl = { group = "io.jsonwebtoken", name = "jjwt-impl", version.ref = "jsonwebtoken" }
+jjwt-gson = { group = "io.jsonwebtoken", name = "jjwt-gson", version.ref = "jsonwebtoken" }
+
+
+paho-mqtt-android = { group = "org.eclipse.paho", name = "org.eclipse.paho.android.service", version.ref = "pahoMqtt" }
+paho-mqtt-client = { group = "org.eclipse.paho", name = "org.eclipse.paho.client.mqttv3", version.ref = "pahoMqtt" }
+
+
+geckoview = { group = "org.mozilla.geckoview", name = "geckoview", version.ref = "geckoview" }
 
 
 androidx-multidex = { group = "androidx.multidex", name = "multidex", version.ref = "multidex" }
+androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

@@ -17,7 +17,6 @@
         android:name="com.ityu.studymvvmandroid.ui.RecommendFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_home">
-        <!-- 从 Recommend 到其他三个 Tab 的 Action -->
 
     </fragment>
 
@@ -26,8 +25,6 @@
         android:name="com.ityu.studymvvmandroid.ui.HotListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_home">
-        <!-- 从 HotList 到其他三个 Tab 的 Action -->
-
     </fragment>
 
     <fragment

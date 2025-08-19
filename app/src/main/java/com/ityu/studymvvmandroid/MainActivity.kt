@@ -10,6 +10,8 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.ityu.studymvvmandroid.databinding.ActivityMainBinding
 import com.ityu.studymvvmandroid.domain.model.SharedViewModel
 import com.ityu.studymvvmandroid.utils.LogUtils
@@ -17,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private val sharedViewModel: SharedViewModel by viewModels()
@@ -29,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        setupNavigation()
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
         sharedViewModel.sharedData.observe(this) { data ->
@@ -37,6 +39,13 @@ class MainActivity : AppCompatActivity() {
             LogUtils.e("MainActivity", "Received shared data: $data")
         }
     }
+
+    private fun setupNavigation() {
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
+        navController = navHostFragment.navController
+    }
+
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
@@ -65,8 +74,6 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-
         // 在这里添加你的拦截逻辑
         // 检查当前是否在需要拦截的页面
         if (navController.currentDestination?.id == R.id.FirstFragment) { // 假设你的Fragment在nav_graph中的ID是这个
